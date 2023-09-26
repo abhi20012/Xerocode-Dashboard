@@ -1,24 +1,11 @@
-
-
-<!-- <h1>signup Page</h1>
-
-<form action="/users/create" method="POST">
-	<input type="text" name="firstName"  placeholder="First Name" required>
-	<input type="text" name="lastName"  placeholder="Last Name" required>
-	<input type="email" name="email"  placeholder="Email-id" required>
-	<input type="password" name="password" placeholder="Password" required>
-	<input type="password" name="confirm_password" placeholder="Confirm Password" required>
-	<input type="submit" value="SIGN UP">
-</form> -->
-
 <div class="signup-container">
 	<div class="left">
 		<div class="head-img">
 			<img src="/images/logo.svg" alt="">
 		</div>
 		<div class="sub-heading">
-			<p class="text-3xl font-bold text-black font-style-Nunito">Hello!</h1>
-			<p class="light-sub-heading">Create your Account</p>
+			<h1>Hello!</h1>
+			<p class="light-sub-heading">Create Your Account</p>
 		</div>
 		
 		<form action="/users/create" method="POST">
@@ -30,7 +17,8 @@
 			<input type="submit" value="SIGN UP">			
 		</form>
 
-		<p>OR</p>
+			<p class="middle-text">OR</p>	
+
 		<div class="social-btn">
 			<button class="btn-google">
 				Sign Up With Google
@@ -43,11 +31,12 @@
 			</button>
 		</div>
 
-		<p>Already have an Account ? <a href="/users/signin">LOGIN</a></p>
+		<p class="bottom-text">Already have an Account ? <span><a href="/users/signin">LOGIN</a></span></p>
 
 	</div>
+	<div class="line"></div>
 	<div class="right">
-		<img src="/images/bro.svg" alt="">
+		<img src="/images/bro.svg" class="bro-img" alt="bro-img">
 		<img src="/images/Vector.svg" alt="">
 	</div>
 </div>

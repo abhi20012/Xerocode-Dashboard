@@ -1,11 +1,51 @@
 
-
+<!-- 
 <h1>Login Page</h1>
 
 <form action="/users/create-session" method="POST">
 	<input type="email" name="email" placeholder="Email id" required>
 	<input type="password" name="password" placeholder="Password" required>
 	<input type="submit" value="Login">
-</form>
+</form> -->
+
+
+<div class="signup-container">
+	<div class="left">
+		<div class="head-img">
+			<img src="/images/logo.svg" alt="">
+		</div>
+		<div class="sub-heading">
+			<h1>Welcome!</h1>
+			<p class="light-sub-heading">Login To Your Account</p>
+		</div>
+		
+		<form action="/users/create" method="POST" style="margin-top: 50px;">
+			<input type="email" name="email"  placeholder="Email-id" required>
+			<input type="password" name="password" placeholder="Password" required>
+			<input type="submit" value="LOGIN">			
+		</form>
+		<p class="middle-text">OR</p>	
+		<div class="social-btn">
+			<button class="btn-google">
+				Login With Google
+				<img src="/images/icons8-google.svg" alt="">
+			</button>
+			
+			<button class="btn-github">
+				Login With Github
+				<img src="/images/icons8-github.svg" alt="">
+			</button>
+		</div>
+
+		<p class="bottom-text" style="margin-top: 20px;">Don't have an Account ? <span><a href="/users/signup">SIGN UP</a></span></p>
+
+	</div>
+	<div class="line"></div>
+	<div class="right">
+		<img src="/images/bro.svg" class="bro-img"  alt="">
+		<img src="/images/Vector.svg" alt="">
+	</div>
+</div>
+
 
 
