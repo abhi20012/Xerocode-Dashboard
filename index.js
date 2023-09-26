@@ -27,8 +27,8 @@ app.use(cookieParser());
 //using static files
 //makes the uploads path available to the browser
 //extract style and pages from sub pages into the layout
-app.set('layout extractStyles', true);
-app.set('layout extractScripts', true);
+// app.set('layout extractStyles', true);
+// app.set('layout extractScripts', true);
 
 //setting up the view engine
 app.set('view engine', 'ejs');
