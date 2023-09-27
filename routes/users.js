@@ -26,4 +26,7 @@ router.get('/auth/google/callback', passport.authenticate('google', {failureRedi
 router.get('/auth/github',passport.authenticate('github'));
 router.get('/auth/github/callback',passport.authenticate('github', {failureRedirect: '/users/signin'}), userController.createSession);
 
+//signup pages route
+router.get('/hosting', passport.checkAuthentication, userController.hosting)
+
 module.exports = router;

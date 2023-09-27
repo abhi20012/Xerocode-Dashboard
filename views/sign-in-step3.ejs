@@ -1,0 +1,44 @@
+<style>
+	.hidden-field {
+    display: none;
+}
+.selected {
+    background-color: #1F64FF; /* Change to your desired color */
+    color: #fff; /* Change text color to make it visible */
+}
+
+</style>
+<link rel="stylesheet" href="">
+<div class="step2-conatiner">
+	
+	<img src="/images/logo.svg" alt="">
+
+	<div class="sub-heading">
+		<h1>Welcome <%=locals.user.firstName%> <%= locals.user.lastName%>!</h1>
+		<p class="light-sub-heading-3" draggable="true">Choose From The Following Deployment options</p>
+	</div>
+	<div class="select">
+		<a href="/users/dashboard"><button id="option1" class="btn">Self Hosting</button></a>
+		<a href="/users/dashboard"><button id="option2" class="btn">XeroCode Hosting</button></a>
+	</div>
+</div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".btn");
+    const fieldContainer = document.getElementById("fieldContainer");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            // Remove the selected class from all buttons
+            buttons.forEach(b => {
+                b.classList.remove("selected");
+            });
+
+            // Add the selected class to the clicked button
+            button.classList.add("selected");
+        });
+    });
+});
+
+</script>

@@ -52,8 +52,9 @@ module.exports.create = async function(req, res){
 }
 
 module.exports.createSession = function(req, res){
-	req.flash('success', "Logged in Successfully");
-	return res.redirect('/');
+	return res.render('sign-in-step2', {
+		title:"Second page"
+	})
 }
 
 module.exports.destroySession = function(req, res, next){
@@ -65,4 +66,10 @@ module.exports.destroySession = function(req, res, next){
 		return res.redirect('/users/signin');
 	});
 
+}
+
+module.exports.hosting = function(req, res){
+	return res.render('sign-in-step3', {
+		title:"Third page of signin"
+	})
 }
