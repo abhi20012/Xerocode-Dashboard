@@ -11,13 +11,15 @@ app.use(expressLayouts);
 const path = require('path');
 
 const db = require('./config/mongoose');
-
 const session = require('express-session');//importing express session for the signed in user
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const passportJwt = require('./config/passport-jwt-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
+const passportGithub = require('./config/passport-github-oauth2-strategy');
 const MongoStore = require('connect-mongo');
-
+const flash = require('connect-flash');
+const customMware = require('./config/middleware');
 
 app.use(express.urlencoded({extended:true}));
 //using cookie parser 
@@ -59,6 +61,9 @@ app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
 
+//setting up flash for notification
+app.use(flash());
+app.use(customMware.setFlash);
 
 app.use('/', require('./routes'))
 

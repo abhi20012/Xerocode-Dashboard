@@ -35,13 +35,14 @@ module.exports.create = async function(req, res){
 		if(!user){
 			try {
 				User.create(req.body);
+				req.flash('success', 'Account created!')
 				return res.redirect('/users/signin');
 			} catch (error) {
-				console.log("Error in creating a user :: User controller error", error);
+				req.flash('failure', error);
 				return;
 			}
 		}else{
-			alert("User already exist");
+			req.flash('failure', "User already exist!");
 			return res.redirect('back');
 		}
 	} catch (error) {
@@ -51,6 +52,7 @@ module.exports.create = async function(req, res){
 }
 
 module.exports.createSession = function(req, res){
+	req.flash('success', "Logged in Successfully");
 	return res.redirect('/');
 }
 
@@ -59,7 +61,7 @@ module.exports.destroySession = function(req, res, next){
 		if(err){
 			return next(err);
 		}
-
+		req.flash('success', "Logged out!");
 		return res.redirect('/users/signin');
 	});
 

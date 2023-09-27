@@ -19,22 +19,22 @@
 			<p class="light-sub-heading">Login To Your Account</p>
 		</div>
 		
-		<form action="/users/create" method="POST" style="margin-top: 50px;">
+		<form action="/users/create-session" method="POST" style="margin-top: 50px;">
 			<input type="email" name="email"  placeholder="Email-id" required>
 			<input type="password" name="password" placeholder="Password" required>
 			<input type="submit" value="LOGIN">			
 		</form>
 		<p class="middle-text">OR</p>	
-		<div class="social-btn">
-			<button class="btn-google">
+		<div class="social-btn" style="justify-content: space-evenly;">
+			<a href="/users/auth/google"><button class="btn-google">
 				Login With Google
 				<img src="/images/icons8-google.svg" alt="">
-			</button>
+			</button></a>
 			
-			<button class="btn-github">
+			<a href="/users/auth/github"><button class="btn-github">
 				Login With Github
 				<img src="/images/icons8-github.svg" alt="">
-			</button>
+			</button></a>
 		</div>
 
 		<p class="bottom-text" style="margin-top: 20px;">Don't have an Account ? <span><a href="/users/signup">SIGN UP</a></span></p>
